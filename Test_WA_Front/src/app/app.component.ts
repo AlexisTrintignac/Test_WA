@@ -13,4 +13,8 @@ export class AppComponent {
   public goPersonnePage(){
     this.router.navigate(['/personne']);
   }
+
+  public goEmploiPage(){
+    this.router.navigate(['/emploi']);
+  }
 }

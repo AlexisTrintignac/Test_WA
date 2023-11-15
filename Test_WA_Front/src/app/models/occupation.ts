@@ -9,5 +9,5 @@ export interface Occupation {
     personneId: number,
     personne: Personne,
     dateDebut: Date,
-    dateFin: Date
+    dateFin?: Date
 }

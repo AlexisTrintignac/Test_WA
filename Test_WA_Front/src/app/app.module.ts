@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PersonneComponent } from './components/personne/personne.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EmploiComponent } from './components/emploi/emploi.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonneComponent
+    PersonneComponent,
+    EmploiComponent
   ],
   imports: [
     BrowserModule,
