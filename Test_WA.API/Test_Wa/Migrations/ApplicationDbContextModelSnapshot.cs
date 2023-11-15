@@ -99,7 +99,7 @@ namespace Test_Wa.Migrations
             modelBuilder.Entity("Test_Wa.Data.Domain.Occupation", b =>
                 {
                     b.HasOne("Test_Wa.Data.Domain.Emploi", "Emploi")
-                        .WithMany()
+                        .WithMany("Occupations")
                         .HasForeignKey("EmploiId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -113,6 +113,11 @@ namespace Test_Wa.Migrations
                     b.Navigation("Emploi");
 
                     b.Navigation("Personne");
+                });
+
+            modelBuilder.Entity("Test_Wa.Data.Domain.Emploi", b =>
+                {
+                    b.Navigation("Occupations");
                 });
 
             modelBuilder.Entity("Test_Wa.Data.Domain.Personne", b =>

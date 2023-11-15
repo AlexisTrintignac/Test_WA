@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Test_Wa.Data.Domain;
 using Test_Wa.Data.Dto;
 using Test_Wa.Repository.Interface;
 
@@ -28,6 +29,27 @@ namespace Test_Wa.Controllers
         {
             List<PersonneDetails> personnes = await this.personneRepository.GetAllDetails();
 
+            return Ok(personnes);
+        }
+
+        [HttpGet("{nomEntreprise}")]
+        public async Task<IActionResult> GetPersonnesByEntreprise(string nomEntreprise)
+        {
+            List<PersonneDetails> personnes = await this.personneRepository.GetPersonnesByEntreprise(nomEntreprise);
+            return Ok(personnes);
+        }
+
+        [HttpGet("WithoutEmploi/{dateDebut}/{dateFin}")]
+        public async Task<IActionResult> GetPersonnesWithoutEmploi(DateTime dateDebut, DateTime dateFin)
+        {
+            List<Personne> personnes = await this.personneRepository.GetPersonnesWithoutEmploi(dateDebut, dateFin);
+            return Ok(personnes);
+        }
+
+        [HttpGet("WithEmploi/{dateDebut}/{dateFin}")]
+        public async Task<IActionResult> GetPersonnesWithEmploi(DateTime dateDebut, DateTime dateFin)
+        {
+            List<Personne> personnes = await this.personneRepository.GetPersonnesWithEmploi(dateDebut, dateFin);
             return Ok(personnes);
         }
     }

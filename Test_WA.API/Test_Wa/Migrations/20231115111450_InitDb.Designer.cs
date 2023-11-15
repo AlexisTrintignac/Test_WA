@@ -12,8 +12,8 @@ using Test_Wa.Data;
 namespace Test_Wa.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231115103454_InitBd")]
-    partial class InitBd
+    [Migration("20231115111450_InitDb")]
+    partial class InitDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -101,7 +101,7 @@ namespace Test_Wa.Migrations
             modelBuilder.Entity("Test_Wa.Data.Domain.Occupation", b =>
                 {
                     b.HasOne("Test_Wa.Data.Domain.Emploi", "Emploi")
-                        .WithMany()
+                        .WithMany("Occupations")
                         .HasForeignKey("EmploiId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -115,6 +115,11 @@ namespace Test_Wa.Migrations
                     b.Navigation("Emploi");
 
                     b.Navigation("Personne");
+                });
+
+            modelBuilder.Entity("Test_Wa.Data.Domain.Emploi", b =>
+                {
+                    b.Navigation("Occupations");
                 });
 
             modelBuilder.Entity("Test_Wa.Data.Domain.Personne", b =>

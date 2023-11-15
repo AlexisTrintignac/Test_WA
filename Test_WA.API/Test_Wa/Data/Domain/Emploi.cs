@@ -12,5 +12,7 @@ namespace Test_Wa.Data.Domain
         public string NomEntreprise { get; set; }
         [Required]
         public string NomPoste { get; set;}
+
+        public List<Occupation> Occupations { get; set; }
     }
 }

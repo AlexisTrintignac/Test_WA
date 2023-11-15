@@ -6,5 +6,7 @@ namespace Test_Wa.Repository.Interface
     public interface IEmploiRepository
     {
         Task Add(CreateEmploi emploi);
+
+        Task<List<Emploi>> GetEmploieByPersonneAndDate(int personneId, DateTime dateDebut, DateTime datefin);
     }
 }
