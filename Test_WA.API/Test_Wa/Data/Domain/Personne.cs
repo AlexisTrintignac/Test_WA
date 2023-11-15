@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Test_Wa.Data.Domain
 {
@@ -15,8 +16,8 @@ namespace Test_Wa.Data.Domain
         public string Prenom { get; set; }
 
         public DateTime DateNaissance { get; set; }
-
-        public List<Occupation> Occupations { get; set; }
+        [JsonIgnore]
+        public virtual List<Occupation> Occupations { get; set; }
 
     }
 }

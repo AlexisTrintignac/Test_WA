@@ -64,3 +64,7 @@ C:\Dev\Test_WA\Test_WA.API\Test_Wa\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagg
 C:\Dev\Test_WA\Test_WA.API\Test_Wa\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Dev\Test_WA\Test_WA.API\Test_Wa\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Dev\Test_WA\Test_WA.API\Test_Wa\obj\Debug\net6.0\Test_Wa.MvcApplicationPartsAssemblyInfo.cs
+C:\Dev\Test_WA\Test_WA.API\Test_Wa\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Dev\Test_WA\Test_WA.API\Test_Wa\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Dev\Test_WA\Test_WA.API\Test_Wa\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Dev\Test_WA\Test_WA.API\Test_Wa\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

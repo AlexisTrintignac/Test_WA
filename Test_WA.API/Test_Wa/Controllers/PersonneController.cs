@@ -1,13 +1,18 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 using Test_Wa.Data.Domain;
 using Test_Wa.Data.Dto;
 using Test_Wa.Repository.Interface;
+using Microsoft.AspNetCore.Cors;
 
 namespace Test_Wa.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnableCors("AllowSpecificOrigin")]
+
     public class PersonneController : ControllerBase
     {
         private IPersonneRepository personneRepository;
@@ -18,7 +23,7 @@ namespace Test_Wa.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreatePersonne(CreatePersonne personne)
+        public async Task<IActionResult> CreatePersonne([FromBody] CreatePersonne personne)
         {
             await this.personneRepository.Add(personne);
             return Ok("Personne créer");

@@ -1,4 +1,5 @@
-﻿using Test_Wa.Data.Domain;
+﻿using System.Text.Json.Serialization;
+using Test_Wa.Data.Domain;
 
 namespace Test_Wa.Data.Dto
 {
@@ -11,10 +12,8 @@ namespace Test_Wa.Data.Dto
         public string Prenom { get; set; }
 
         public int age{ get; set; }
+        [JsonIgnore]
+        public virtual List<Emploi> emploies { get; set; }
 
-        public List<Emploi> emploies { get; set; }
-
-/*        public string nomEntreprise { get; set; }
-*/
     }
 }

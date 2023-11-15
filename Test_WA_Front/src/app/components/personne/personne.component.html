@@ -1,0 +1,62 @@
+<div>
+    <form [formGroup]="personneForm" (ngSubmit)="onSubmit()">
+        <h2>Création de Personne</h2>
+      
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" formControlName="nom" required>
+      
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" formControlName="prenom" required>
+      
+        <label for="dateNaissance">Date de Naissance :</label>
+        <input type="date" id="dateNaissance" formControlName="dateNaissance" required>
+      
+        <button type="submit">Créer Personne</button>
+      </form>
+
+      <strong> Personnes :</strong>
+      <div *ngFor="let personne of personnes">
+        {{personne.nom}} - {{personne.prenom}} - {{personne.age}}
+      </div>
+      ----------------------------------------------------------------
+      <h2> Chercher par nom d'entreprise :</h2>
+      <form [formGroup]="personneEntrepriseForm" (ngSubmit)="onSubmitEntreprise()">
+        <label for="entreprise">Nom d'entreprise :</label>
+        <input type="text" id="entreprise" formControlName="entreprise" required>
+      
+        <button type="submit">Chercher Personne</button>
+      </form>
+      <div *ngFor="let per of personnesByEntreprise">
+        {{per.nom}} - {{per.prenom}} - {{per.age}}
+      </div>
+----------------------------------------------------------------
+      <form [formGroup]="personneWithoutEmploiForm" (ngSubmit)="onSubmitWithoutEmploi()">
+        <h2>Les Personnes qui n'ont pas d'emploie entre les deux dates :</h2>
+      
+        <label for="dateDebut">Date de début :</label>
+        <input type="date" id="dateDebut" formControlName="dateDebut" required>
+
+        <label for="dateFin">Date de fin :</label>
+        <input type="date" id="dateFin" formControlName="dateFin" required>
+      
+        <button type="submit">Chercher Personne</button>
+      </form>
+      <div *ngFor="let per of personnesWithoutEmploie">
+        {{per.nom}} - {{per.prenom}} - {{per.dateNaissance |date:'dd/MM/yyyy'}}
+      </div>
+      ----------------------------------------------------------------
+      <form [formGroup]="personneWithEmploiForm" (ngSubmit)="onSubmitWithEmploi()">
+        <h2>Les Personnes qui ont un emploie entre les deux dates :</h2>
+      
+        <label for="dateDebut1">Date de début :</label>
+        <input type="date" id="dateDebut1" formControlName="dateDebut1" required>
+
+        <label for="dateFin1">Date de fin :</label>
+        <input type="date" id="dateFin1" formControlName="dateFin1" required>
+      
+        <button type="submit">Chercher Personne</button>
+      </form>
+      <div *ngFor="let per of personnesWithEmploie">
+        {{per.nom}} - {{per.prenom}} - {{per.dateNaissance |date:'dd/MM/yyyy'}}
+      </div>
+  </div>
